@@ -1,0 +1,222 @@
+.app-shell {
+  width: min(1120px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 40px 0;
+}
+
+.toolbar {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 24px;
+  margin-bottom: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 8px;
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0;
+  text-transform: uppercase;
+}
+
+.summary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.summary-grid article {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+  padding: 18px;
+}
+
+.summary-grid span,
+.list-heading span {
+  color: var(--muted);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.summary-grid strong {
+  display: block;
+  margin-top: 8px;
+  color: var(--text-strong);
+  font-size: 34px;
+  line-height: 1;
+}
+
+.workspace {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 20px;
+  align-items: start;
+}
+
+.doubt-form,
+.doubt-card,
+.empty-state {
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+.doubt-form {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+}
+
+.doubt-form label {
+  display: grid;
+  gap: 8px;
+  color: var(--text-strong);
+  font-size: 14px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--input);
+  color: var(--text);
+  font: inherit;
+  letter-spacing: 0;
+  padding: 10px 12px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+button {
+  border: 1px solid var(--primary);
+  border-radius: 6px;
+  background: var(--primary);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  letter-spacing: 0;
+  padding: 10px 14px;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.65;
+}
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--focus);
+  outline-offset: 2px;
+}
+
+.secondary-button {
+  border-color: var(--border);
+  background: var(--surface);
+  color: var(--text-strong);
+}
+
+.danger-button {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+.status {
+  border-radius: 8px;
+  margin: 0 0 20px;
+  padding: 12px 14px;
+}
+
+.error {
+  border: 1px solid var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger-text);
+}
+
+.doubt-list {
+  display: grid;
+  gap: 12px;
+}
+
+.list-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.empty-state {
+  color: var(--muted);
+  padding: 24px;
+}
+
+.doubt-card {
+  display: grid;
+  gap: 16px;
+  padding: 20px;
+  text-align: left;
+}
+
+.card-head,
+.card-actions {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.topic {
+  color: var(--primary);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.badge {
+  border-radius: 999px;
+  background: var(--pending-soft);
+  color: var(--pending-text);
+  flex: 0 0 auto;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 5px 10px;
+}
+
+.badge.solved {
+  background: var(--solved-soft);
+  color: var(--solved-text);
+}
+
+.card-actions {
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    width: min(100% - 24px, 1120px);
+    padding: 24px 0;
+  }
+
+  .toolbar,
+  .card-head {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .summary-grid,
+  .workspace {
+    grid-template-columns: 1fr;
+  }
+}
